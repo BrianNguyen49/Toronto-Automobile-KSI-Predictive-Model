@@ -19,7 +19,7 @@ The aim of this project is to develop a machine learning model to analyze and id
 pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboost
 ```
 
-## Findings
+## Key Insights and Findings
 
 - Top predictive features for the Random Forest and model included `INJURY`, `LATITUDE`, `LONGITUDE`, `YEAR`, `MONTH`, `DIVISION`, `IMPACTYPE`, and `INVTYPE`
 - After reclassifying 'Property Damage Only' as 'Non-Fatal Injury', approximately 13.27% of collisions are fatal and 86.73% are non-fatal.
@@ -35,6 +35,6 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 | **Logistic Reg.**  | 80.04%    | 94.67%    | 87.64%   | 81.58%   | 0.853   |
 | **XGBoost**        | 94.39%    | 94.43%    | 96.85%   | 99.39%   | 0.946   |
 
-### Key Insights
+### Results Summary
 
 Random Forest and XGBoost both delivered strong performance, especially in identifying fatal collisions, with high accuracy, recall and F1 scores Logistic Regression performed well in terms of precision but lagged behind in terms of recall and overall accuracy, making it less reliable for detecting fatal outcomes. XGBoost outperformed the other models across all evaluation metrics, slightly outperforming Random Forest in all categories. Therefore we can conclude that XGBoost is the most effective model for distinguishing between fatal and non-fatal cases.
