@@ -15,6 +15,8 @@ The aim of this project is to develop a machine learning model to analyze and id
   - imbalanced-learn (SMOTE)
   - XGBoost
 
+To reproduce the project, pelase install the following dependencies: pip install pandas numpy scikit-learn xgboost imbalanced-learn matplotlib seaborn
+
 ## Findings
 
 - Top predictive features for the Random Forest and model included `INJURY`, `LATITUDE`, `LONGITUDE`, `YEAR`, `MONTH`, `DIVISION`, `IMPACTYPE`, and `INVTYPE`
