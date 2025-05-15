@@ -17,44 +17,20 @@ The aim of this project is to develop a machine learning model to analyze and id
 
 ## Findings
 
-Based on the outcome of the evaluation of the three models, approximately 90% of the collisions in the dataset are non-fatal, with the remaining 10% being fatal.
-Many binary fields (e.g., SPEEDING, DISABILITY) provided sparse but useful signals for classification. Categorical variables like LIGHT, VISIBILITY, ROAD_CLASS showed significant variation across fatal vs non-fatal cases
+- Top predictive features for the Random Forest and model included `INJURY`, `LATITUDE`, `LONGITUDE`, `YEAR`, `MONTH`, `DIVISION`, `IMPACTYPE`, and `INVTYPE`
+- After reclassifying 'Property Damage Only' as 'Non-Fatal Injury', approximately 13.27% of collisions are fatal and 86.73% are non-fatal.
+- The ACCLASS column was used as the target variable, with 'Fatal' encoded as 0 and 'Non-Fatal Injury' as 1.
+- Several sparse (data with many gaps) columns (e.g., SPEEDING, DISABILITY, ALCOHOL) had mostly missing values that were filled with 'No' to maintain consistency.
+- Some columns with highly specific location information or too many unique values (e.g., STREET1, LATITUDE, HOOD_140) were removed to reduce noise and dimensionality in the model.
 
-2. Logistic Regression
+## Model Evaluation Results
 
-Preprocessing: One-hot encoding for categoricals, MinMax scaling
+| Model              | Accuracy  | Precision | F1 Score | Recall   | ROC AUC |
+|--------------------|-----------|-----------|----------|----------|---------|
+| **Random Forest**  | 93.63%    | 94.07%    | 96.42%   | 98.89%   | 0.926   |
+| **Logistic Reg.**  | 80.04%    | 94.67%    | 87.64%   | 81.58%   | 0.853   |
+| **XGBoost**        | 94.39%    | 94.43%    | 96.85%   | 99.39%   | 0.946   |
 
-SMOTE applied to training data
+### Key Insights
 
-GridSearchCV parameters:
-
-C: [0.1, 1, 10]
-
-Evaluation Metrics:
-
-Accuracy: 80.19%
-Precision: 94.65%
-Recall: 81.78%
-F1 Score: 87.75%
-ROC AUC: 0.855
-
-3. XGBoost Classifier
-
-Preprocessing: Ordinal encoding for categoricals, MinMax scaling
-
-SMOTE applied to training data
-
-GridSearchCV parameters:
-
-n_estimators: [100, 200]
-max_depth: [6, 8, 10]
-learning_rate: [0.05, 0.1]
-subsample: [0.8, 1.0]
-colsample_bytree: [0.8, 1.0]
-
-Evaluation Metrics:
-Accuracy: ~95.81%
-Precision: ~95.57%
-Recall: ~99.79%
-F1 Score: ~97.64%
-ROC AUC: ~0.965
+Random Forest and XGBoost both delivered strong performance, especially in identifying fatal collisions, with high accuracy, recall and F1 scores Logistic Regression performed well in terms of precision but lagged behind in terms of recall and overall accuracy, making it less reliable for detecting fatal outcomes. XGBoost outperformed the other models across all evaluation metrics, slightly outperforming Random Forest in all categories. Therefore we can conclude that XGBoost is the most effective model for distinguishing between fatal and non-fatal cases.
