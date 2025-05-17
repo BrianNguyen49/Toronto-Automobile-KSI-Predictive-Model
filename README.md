@@ -2,6 +2,25 @@
 
 The aim of this project is to develop a machine learning model to analyze and identify trends in automobile-related KSI incidents within Toronto. It utilizes the Automobile-related KSI Collisions dataset (2006-2024) provided by Toronto Police Service through their [Public Safety Data Portal](https://data.torontopolice.on.ca/datasets/TorontoPS::automobile-ksi/about) to predict the likelihood of fatal or non-fatal Automobile-related KSI occurrences in Toronto.
 
+## Exploratory Data Analysis (EDA)
+The goal of the EDA phase is to gain insight into the dataset and identify its structure, variable relationships, feature distributions, and potential outliers. This step ensures the data is suitable for modeling and helps highlight the most informative variables that may influence the outcome of automobile-related KSI  collisions in Toronto.
+
+- Checking dataset dimensions and column names
+- Reviewing data types, missing values, and summary statistics
+- Converting the `DATE` column to datetime and extracting `YEAR`, `MONTH`, and `WEEKDAY` 
+- Inspecting unique values in categorical columns
+- Visualizing distributions of key categorical features
+
+## Data Cleaning
+
+The goal of the data cleaning phase is to improve data quality by identifying, correcting and transforming inconsistencies in the dataset. This step ensures that the data is accurate and consistent, helping to reduce bias and uncertainty when training supervised learning models.
+
+- Reclassifying "Property Damage Only" entries as "Non-Fatal Injury" to support binary classification
+- Filtering the dataset to include only "Fatal" and "Non-Fatal Injury" cases
+- Filling missing values in binary categorical columns (e.g., PEDESTRIAN, ALCOHOL) with "No"
+- Dropping irrelevant or redundant columns
+- Applying label encoding to convert the target column (ACCLASS) into a binary numeric format
+
 ## Setup and Requirements
 
 - **Python Version**: 3.13  
@@ -14,6 +33,10 @@ The aim of this project is to develop a machine learning model to analyze and id
   - seaborn
   - imbalanced-learn (SMOTE)
   - XGBoost
+
+## Installation
+
+To set up your environment for running the notebook, make sure Python is installed on your system along with the required libraries. You can install all dependencies using the following command:
 
 ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboost
