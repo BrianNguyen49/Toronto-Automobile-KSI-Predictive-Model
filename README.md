@@ -67,6 +67,14 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 - Several sparse (data with many gaps) columns (e.g., SPEEDING, DISABILITY, ALCOHOL) had mostly missing values that were filled with 'No' to maintain consistency.
 - Some columns with highly specific location information or too many unique values (e.g., STREET1, LATITUDE, HOOD_140) were removed to reduce noise and dimensionality in the model.
 
+<div align="center">
+
+![Image](https://github.com/user-attachments/assets/5b5d38c1-8126-4f0a-9f6a-055e71386a7f)
+![Image](https://github.com/user-attachments/assets/c6dfb038-7cfe-47a9-b336-ede00795331d)
+![Image](https://github.com/user-attachments/assets/b15f6092-2de7-44e2-8b33-35c021782b4d)
+
+</div>
+
 ## Model Evaluation Results
 
 | Model                   | Accuracy  | Precision | F1 Score | Recall   | ROC AUC |
@@ -74,6 +82,7 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 | **Random Forest**       | 93.63%    | 94.07%    | 96.42%   | 98.89%   | 0.926   |
 | **Logistic Regresion**  | 80.04%    | 94.67%    | 87.64%   | 81.58%   | 0.853   |
 | **XGBoost**             | 94.39%    | 94.43%    | 96.85%   | 99.39%   | 0.946   |
+
 
 ### Results Summary
 
