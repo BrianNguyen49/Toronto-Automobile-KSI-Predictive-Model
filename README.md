@@ -69,9 +69,9 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 
 <div align="center">
 
-![Image](https://github.com/user-attachments/assets/5b5d38c1-8126-4f0a-9f6a-055e71386a7f)
-![Image](https://github.com/user-attachments/assets/c6dfb038-7cfe-47a9-b336-ede00795331d)
-![Image](https://github.com/user-attachments/assets/b15f6092-2de7-44e2-8b33-35c021782b4d)
+<img src="https://github.com/user-attachments/assets/5b5d38c1-8126-4f0a-9f6a-055e71386a7f" width="30%" alt="Logistic Regression CM">
+<img src="https://github.com/user-attachments/assets/c6dfb038-7cfe-47a9-b336-ede00795331d" width="30%" alt="Random Forest CM">
+<img src="https://github.com/user-attachments/assets/b15f6092-2de7-44e2-8b33-35c021782b4d" width="30%" alt="XGBoost CM">
 
 </div>
 
