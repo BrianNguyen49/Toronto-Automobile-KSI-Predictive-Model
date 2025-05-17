@@ -3,7 +3,10 @@
 The aim of this project is to develop a machine learning model to analyze and identify trends in automobile-related KSI incidents within Toronto. It utilizes the Automobile-related KSI Collisions dataset (2006-2024) provided by Toronto Police Service through their [Public Safety Data Portal](https://data.torontopolice.on.ca/datasets/TorontoPS::automobile-ksi/about) to predict the likelihood of fatal or non-fatal Automobile-related KSI occurrences in Toronto.
 
 ## Exploratory Data Analysis (EDA)
+
 The goal of the EDA phase is to gain insight into the dataset and identify its structure, variable relationships, feature distributions, and potential outliers. This step ensures the data is suitable for modeling and helps highlight the most informative variables that may influence the outcome of automobile-related KSI  collisions in Toronto.
+
+EDA actions performed on the dataset include:
 
 - Checking dataset dimensions and column names
 - Reviewing data types, missing values, and summary statistics
@@ -15,11 +18,25 @@ The goal of the EDA phase is to gain insight into the dataset and identify its s
 
 The goal of the data cleaning phase is to improve data quality by identifying, correcting and transforming inconsistencies in the dataset. This step ensures that the data is accurate and consistent, helping to reduce bias and uncertainty when training supervised learning models.
 
+Data cleaning techniques applied:
+
 - Reclassifying "Property Damage Only" entries as "Non-Fatal Injury" to support binary classification
 - Filtering the dataset to include only "Fatal" and "Non-Fatal Injury" cases
 - Filling missing values in binary categorical columns (e.g., PEDESTRIAN, ALCOHOL) with "No"
 - Dropping irrelevant or redundant columns
 - Applying label encoding to convert the target column (ACCLASS) into a binary numeric format
+
+## Data Preprocessing
+
+The goal of the data preprocessing phase is to prepare and transform the raw data into a format suitable for machine learning models. This phase includes feature scaling, feature selection, encoding categorical variables, and balancing the classes using SMOTE.
+
+Preprocessing steps performed:
+
+- Splitting the dataset into features `X` and target variable `y`
+- Encoding categorical variables using OneHotEncoding or OrdinalEncoding depending on the model used
+- Applied data imputation to fill missing values in categorical and numerical features
+- Scaled numerical features using MinMaxScaler as part of a numerical pipeline within a ColumnTransformer to proportionally scale values to a consistent range.
+- Balancing the dataset using SMOTE (Synthetic Minority Over-sampling Technique) to address class imbalance prior to model training
 
 ## Setup and Requirements
 
