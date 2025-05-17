@@ -69,9 +69,9 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 
 <div align="center">
 
-<img src="https://github.com/user-attachments/assets/5b5d38c1-8126-4f0a-9f6a-055e71386a7f" width="30%" alt="Logistic Regression CM">
-<img src="https://github.com/user-attachments/assets/c6dfb038-7cfe-47a9-b336-ede00795331d" width="30%" alt="Random Forest CM">
-<img src="https://github.com/user-attachments/assets/b15f6092-2de7-44e2-8b33-35c021782b4d" width="30%" alt="XGBoost CM">
+<img src="https://github.com/user-attachments/assets/fb3c0994-9e99-45d7-9ee2-50c5dbc756d1" width="30%" alt="Logistic Regression Confusion Matrix"/>
+<img src="https://github.com/user-attachments/assets/b02675b9-1893-4242-93c9-fc9ab5c2d8f6" width="30%" alt="Random Forest Confusion Matrix"/>
+<img src="https://github.com/user-attachments/assets/58255c3e-4ab1-4b21-9449-4502ff2cd889" width="30%" alt="XGBoost Confusion Matrix"/>
 
 </div>
 
