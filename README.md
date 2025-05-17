@@ -29,11 +29,11 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 
 ## Model Evaluation Results
 
-| Model              | Accuracy  | Precision | F1 Score | Recall   | ROC AUC |
-|--------------------|-----------|-----------|----------|----------|---------|
-| **Random Forest**  | 93.63%    | 94.07%    | 96.42%   | 98.89%   | 0.926   |
-| **Logistic Reg.**  | 80.04%    | 94.67%    | 87.64%   | 81.58%   | 0.853   |
-| **XGBoost**        | 94.39%    | 94.43%    | 96.85%   | 99.39%   | 0.946   |
+| Model                   | Accuracy  | Precision | F1 Score | Recall   | ROC AUC |
+|-------------------------|-----------|-----------|----------|----------|---------|
+| **Random Forest**       | 93.63%    | 94.07%    | 96.42%   | 98.89%   | 0.926   |
+| **Logistic Regresion**  | 80.04%    | 94.67%    | 87.64%   | 81.58%   | 0.853   |
+| **XGBoost**             | 94.39%    | 94.43%    | 96.85%   | 99.39%   | 0.946   |
 
 ### Results Summary
 
