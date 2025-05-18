@@ -75,7 +75,15 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 <img src="https://github.com/user-attachments/assets/58255c3e-4ab1-4b21-9449-4502ff2cd889" width="30%" alt="XGBoost Confusion Matrix"/>
 </div>
 
-To better understand model performance, we used the confusion matrix to manually calculate model performance metrics including accuracy, precision, F1, and recall score. In order to determine how well a classification model is performing, we plot a confusion matrix which summarizes prediction results by comparing the actual labels with the predicted labels. 
+
+To better understand model performance, we used the confusion matrix to manually calculate model performance metrics including accuracy, precision, F1, and recall score. In order to determine how well a classification model is performing, we plot a confusion matrix which summarizes prediction results by comparing the actual labels with the predicted labels. The confusion matrix breaks down the predictions into four categories: true positive, true negative, false positive, false positive. 
+
+In this project, 'Fatal' collisions are encoded as 0 and 'Non-Fatal' as 1. Therefore:
+
+- True Positive (TP): the model correctly predicted positive cases (e.g., predicted outcome was non-fatal)
+- True Negative (TN): the model correctly predicted negative cases (e.g., predicted outcome was fatal)
+- False Positive (FP): the model incorrectly predicted positive cases (e.g., non-fatal incorrectly predicted as fatal cases)
+- False Negative (FN): the model incorrectly predicted negative cases (e.g., missed fatal cases)
 
 ### Confusion Matrix Summary
 
@@ -85,7 +93,7 @@ To better understand model performance, we used the confusion matrix to manually
 | **Random Forest**      | 271                 | 186                   | 33                    | 2953                |
 | **XGBoost**            | 282                 | 175                   | 18                    | 2968                |
 
-
+Using these counts, we calculate the model performance metrics using the following formulas:
 
 - **Accuracy score**  = (TP + TN) / (TP + FN + TN + FP)
 - **Precision score** = TP / (TP + FP)
