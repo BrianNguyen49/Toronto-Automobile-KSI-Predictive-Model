@@ -67,13 +67,15 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 - Several sparse (data with many gaps) columns (e.g., SPEEDING, DISABILITY, ALCOHOL) had mostly missing values that were filled with 'No' to maintain consistency.
 - Some columns with highly specific location information or too many unique values (e.g., STREET1, LATITUDE, HOOD_140) were removed to reduce noise and dimensionality in the model.
 
+## Confusion Matrix and Metric Calculations
+
 <div align="center">
 <img src="https://github.com/user-attachments/assets/fb3c0994-9e99-45d7-9ee2-50c5dbc756d1" width="30%" alt="Logistic Regression Confusion Matrix"/>
 <img src="https://github.com/user-attachments/assets/b02675b9-1893-4242-93c9-fc9ab5c2d8f6" width="30%" alt="Random Forest Confusion Matrix"/>
 <img src="https://github.com/user-attachments/assets/58255c3e-4ab1-4b21-9449-4502ff2cd889" width="30%" alt="XGBoost Confusion Matrix"/>
 </div>
 
-### Confusion Matrix and Metric Derivations (Random Forest)
+To better understand model performance, we used the confusion matrix to manually calculate model performance metrics including accuracy, precision, F1, and recall score. In order to determine how well a classification model is performing, we plot a confusion matrix which summarizes prediction results by comparing the actual labels with the predicted labels. 
 
 ### Confusion Matrix Summary
 
@@ -82,6 +84,8 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 | **Logistic Regression**| 320                 | 137                   | 550                   | 2436                |
 | **Random Forest**      | 271                 | 186                   | 33                    | 2953                |
 | **XGBoost**            | 282                 | 175                   | 18                    | 2968                |
+
+
 
 - **Accuracy score**  = (TP + TN) / (TP + FN + TN + FP)
 - **Precision score** = TP / (TP + FP)
