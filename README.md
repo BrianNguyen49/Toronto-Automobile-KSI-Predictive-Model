@@ -59,7 +59,7 @@ To set up your environment for running the notebook, make sure Python is install
 pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboost
 ```
 
-## Key Insights and Findings
+## Key Insights
 
 - Top predictive features for the Random Forest and model included `INJURY`, `LATITUDE`, `LONGITUDE`, `YEAR`, `MONTH`, `DIVISION`, `IMPACTYPE`, and `INVTYPE`
 - After reclassifying 'Property Damage Only' as 'Non-Fatal Injury', approximately 13.27% of collisions are fatal and 86.73% are non-fatal.
@@ -68,21 +68,54 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 - Some columns with highly specific location information or too many unique values (e.g., STREET1, LATITUDE, HOOD_140) were removed to reduce noise and dimensionality in the model.
 
 <div align="center">
-
 <img src="https://github.com/user-attachments/assets/fb3c0994-9e99-45d7-9ee2-50c5dbc756d1" width="30%" alt="Logistic Regression Confusion Matrix"/>
 <img src="https://github.com/user-attachments/assets/b02675b9-1893-4242-93c9-fc9ab5c2d8f6" width="30%" alt="Random Forest Confusion Matrix"/>
 <img src="https://github.com/user-attachments/assets/58255c3e-4ab1-4b21-9449-4502ff2cd889" width="30%" alt="XGBoost Confusion Matrix"/>
-
 </div>
+
+### Confusion Matrix and Metric Derivations (Random Forest)
+
+### Confusion Matrix Summary
+
+| Model                  | True Negatives (TN) | False Positives (FP)  | False Negatives (FN)  | True Positives (TP) |
+|------------------------|---------------------|-----------------------|-----------------------|---------------------|
+| **Logistic Regression**| 320                 | 137                   | 550                   | 2436                |
+| **Random Forest**      | 271                 | 186                   | 33                    | 2953                |
+| **XGBoost**            | 282                 | 175                   | 18                    | 2968                |
+
+- **Accuracy score**  = (TP + TN) / (TP + FN + TN + FP)
+- **Precision score** = TP / (TP + FP)
+- **F1 Score score**  = 2 * (Precision * Recall) / (Precision + Recall)
+- **Recall score**    = TP / (FN + TP)
+
+### Logistic Regression  
+- TP = 2436, TN = 320, FP = 137, FN = 550  
+- Accuracy  = (2436 + 320) / 3443 = **0.800**  
+- Precision = 2436 / (2436 + 137) = **0.946**
+- F1 Score  = 2 * (0.947 * 0.816) / (0.947 + 0.816) = **0.876**
+- Recall    = 2436 / (2436 + 550) = **0.815**  
+
+### Random Forest  
+- TP = 2953, TN = 271, FP = 186, FN = 33  
+- Accuracy  = (2953 + 271) / 3443 = **0.936**  
+- Precision = 2953 / (2953 + 186) = **0.940**
+- F1 Score  = 2 * (0.941 * 0.989) / (0.941 + 0.989) = **0.964**
+- Recall    = 2953 / (2953 + 33) = **0.989**  
+
+### XGBoost  
+- TP = 2968, TN = 282, FP = 175, FN = 18  
+- Accuracy  = (2968 + 282) / 3443 = **0.943**  
+- Precision = 2968 / (2968 + 175) = **0.944**
+- F1 Score  = 2 * (0.944 * 0.993) / (0.944 + 0.993) = **0.968**
+- Recall    = 2968 / (2968 + 18) = **0.993**  
 
 ## Model Evaluation Results
 
 | Model                   | Accuracy  | Precision | F1 Score | Recall   | ROC AUC |
 |-------------------------|-----------|-----------|----------|----------|---------|
-| **Random Forest**       | 93.63%    | 94.07%    | 96.42%   | 98.89%   | 0.926   |
 | **Logistic Regresion**  | 80.04%    | 94.67%    | 87.64%   | 81.58%   | 0.853   |
+| **Random Forest**       | 93.63%    | 94.07%    | 96.42%   | 98.89%   | 0.926   |
 | **XGBoost**             | 94.39%    | 94.43%    | 96.85%   | 99.39%   | 0.946   |
-
 
 ### Results Summary
 
