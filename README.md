@@ -150,7 +150,21 @@ Using these counts, we calculate the model performance metrics using the followi
 | **Random Forest**       | 94.54%   | 88.98%    | 76.55%   | 67.17%  | 0.943   |
 | **XGBoost**             | 95.70%   | 86.01%    | 83.29%   | 80.74%  | 0.955   |
 | **LightGBM**            | 95.85%   | 89.84%    | 83.19%   | 77.46%  | 0.952   |
-**Note:** The evaluation metrics in this table were computed using model-specific probability thresholds 
+
+**Note:** The evaluation metrics in this table were computed using model-specific probability thresholds
+
+## ROC Curve & AUC Graph
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1f894424-4269-465d-9121-08220dbd3324" width="360" />
+  <img src="https://github.com/user-attachments/assets/9c28fed2-fda3-46af-a8e6-e41ba817fdf7" width="360" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0fcfdc13-6ce5-4266-9017-5866b85cdc82" width="360" />
+  <img src="https://github.com/user-attachments/assets/4ae7d8f5-4e35-4298-ae59-a52f2e6da52b" width="360" />
+</p>
+
+The ROC curve is a visual representation which illustrates each model's performance to distinguish between fatal and non-fatal automobile-related KSI collisions across all thresholds. The ROC curve is drawn by calculating the true positive rate (TPR) and false positive rate (FPR) at every possible threshold, then graphing TPR over FPR. On the other hand, the AUC (Area Under the Curve) measures how well a model ranks predictions, specifically its ability to assign higher probabilities to positive cases than to negative ones. As obersved by the ROC curve plot graphs for each supervised learning model, XGBoost achieved the highest AUC of 0.96, followed by LightGBM which attained an AUC of 0.95. The XGBoost ROC curve indicates higher sensitivity (TPR) among other models while also minimizing false positives. This concludes that XGBoost is the best performing model at correctly classifying observations into categories (distinguishing between fatal and non-fatal collisions).
 
 ### Results Summary
 
