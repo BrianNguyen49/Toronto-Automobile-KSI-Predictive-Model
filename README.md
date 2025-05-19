@@ -90,6 +90,15 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
   </tr>
 </table>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/29059ff0-b173-4256-abff-d099b464dce1" width="300" />
+  <img src="https://github.com/user-attachments/assets/192a68d5-ec35-471a-8dd1-65094d48227a" width="300" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d6f49bd5-c816-4877-bcbc-5100d1e2d191" width="300" />
+  <img src="https://github.com/user-attachments/assets/7182d4e9-7c9c-4e9a-9fff-a9e572f9d032" width="300" />
+</p>
+
 
 To better understand model performance, we used the confusion matrix to manually calculate model performance metrics including accuracy, precision, F1, and recall score. In order to determine how well a classification model is performing, we plot a confusion matrix which summarizes prediction results by comparing the actual labels with the predicted labels. The confusion matrix breaks down the predictions into four categories: true positive, true negative, false positive, false positive. 
 
