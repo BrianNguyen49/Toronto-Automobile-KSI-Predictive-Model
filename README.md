@@ -50,13 +50,14 @@ Preprocessing steps performed:
   - seaborn
   - imbalanced-learn (SMOTE)
   - XGBoost
+  - LightGBM
 
 ## Installation
 
 To set up your environment for running the notebook, make sure Python is installed on your system along with the required libraries. You can install all dependencies using the following command:
 
 ```bash
-pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboost
+pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboost lightgbm
 ```
 
 ## Key Insights
@@ -165,6 +166,29 @@ Using these counts, we calculate the model performance metrics using the followi
 </p>
 
 The ROC curve is a visual representation which illustrates each model's performance to distinguish between fatal and non-fatal automobile-related KSI collisions across all thresholds. The ROC curve is drawn by calculating the true positive rate (TPR) and false positive rate (FPR) at every possible threshold, then graphing TPR over FPR. On the other hand, the AUC (Area Under the Curve) measures how well a model ranks predictions, specifically its ability to assign higher probabilities to positive cases than to negative ones. As obersved by the ROC curve plot graphs for each supervised learning model, XGBoost achieved the highest AUC of 0.96, followed by LightGBM which attained an AUC of 0.95. The XGBoost ROC curve indicates higher sensitivity (TPR) among other models while also minimizing false positives. This concludes that XGBoost is the best performing model at correctly classifying observations into categories (distinguishing between fatal and non-fatal collisions).
+
+### Learning Curve Plot Graph
+
+<table align="center">
+  <tr>
+    <td align="center"><strong>Logistic Regression</strong><br>
+      <img src="https://github.com/user-attachments/assets/42b06f91-e855-4072-ba6c-e710c42c4914" width="360"/>
+    </td>
+    <td align="center"><strong>Random Forest</strong><br>
+      <img src="https://github.com/user-attachments/assets/c0d7c30c-85cb-4549-abca-48942aff464d" width="360"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><strong>XGBoost</strong><br>
+      <img src="https://github.com/user-attachments/assets/be381bbd-0d4c-4db3-9645-f8e325e32015" width="360"/>
+    </td>
+    <td align="center"><strong>LightGBM</strong><br>
+      <img src="https://github.com/user-attachments/assets/de4593fe-63df-4d06-af8b-5a512fa19200" width="360"/>
+    </td>
+  </tr>
+</table>
+
+As you can see from the plot graphs, the Logistic Regression learning curve reflects moderate bias but generalizes well when dealing with new instances. The graph shows stable test accuracy around 0.89 and a training score of approximately 0.92, indicating low variance. In contrast, Random Forest, XGBoost, and LightGBM all exhibit low bias but high variance and overfitting, with perfect training scores (1.00) but declining test accuracies of ~0.71, ~0.70, and ~0.62 respectively,  which tells us that these models has poor time generalizing data not part of the initial training data.
 
 ### Results Summary
 
