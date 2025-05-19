@@ -69,11 +69,26 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 
 ## Confusion Matrix and Metric Calculations
 
-<div align="center">
-<img src="https://github.com/user-attachments/assets/fb3c0994-9e99-45d7-9ee2-50c5dbc756d1" width="30%" alt="Logistic Regression Confusion Matrix"/>
-<img src="https://github.com/user-attachments/assets/b02675b9-1893-4242-93c9-fc9ab5c2d8f6" width="30%" alt="Random Forest Confusion Matrix"/>
-<img src="https://github.com/user-attachments/assets/58255c3e-4ab1-4b21-9449-4502ff2cd889" width="30%" alt="XGBoost Confusion Matrix"/>
-</div>
+<h3 align="center">Confusion Matrices for All Models</h3>
+
+<table align="center">
+  <tr>
+    <td align="center"><strong>Logistic Regression</strong><br>
+      <img src="https://github.com/user-attachments/assets/29059ff0-b173-4256-abff-d099b464dce1" width="300"/>
+    </td>
+    <td align="center"><strong>Random Forest</strong><br>
+      <img src="https://github.com/user-attachments/assets/192a68d5-ec35-471a-8dd1-65094d48227a" width="300"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><strong>XGBoost</strong><br>
+      <img src="https://github.com/user-attachments/assets/d6f49bd5-c816-4877-bcbc-5100d1e2d191" width="300"/>
+    </td>
+    <td align="center"><strong>LightGBM</strong><br>
+      <img src="https://github.com/user-attachments/assets/7182d4e9-7c9c-4e9a-9fff-a9e572f9d032" width="300"/>
+    </td>
+  </tr>
+</table>
 
 
 To better understand model performance, we used the confusion matrix to manually calculate model performance metrics including accuracy, precision, F1, and recall score. In order to determine how well a classification model is performing, we plot a confusion matrix which summarizes prediction results by comparing the actual labels with the predicted labels. The confusion matrix breaks down the predictions into four categories: true positive, true negative, false positive, false positive. 
