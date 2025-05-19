@@ -13,7 +13,6 @@ from sklearn.metrics import (
 from sklearn.model_selection import cross_val_score, learning_curve
 
 # Function to plot all feature importances using impurity-based importance from tree-based models
-
 def plot_all_feature_importances(importances, std, feature_names, title="Feature Importances"):
     forest_importances = pd.Series(importances, index=feature_names)
 
@@ -27,7 +26,6 @@ def plot_all_feature_importances(importances, std, feature_names, title="Feature
     plt.show()
 
 # Function to plot top N important features from a model based on impurity importance
-
 def plot_feature_importances(importances, std, feature_names, top_n=12, title="Top 12 Important Features"):
     forest_importances = pd.Series(importances, index=feature_names)
     top_features = forest_importances.nlargest(top_n)
@@ -43,7 +41,6 @@ def plot_feature_importances(importances, std, feature_names, top_n=12, title="T
     plt.show()
 
 # Function to evaluate a trained classification model using key metrics and visualize its ROC curve
-
 def evaluate_model(model, X_test, y_test, X_full=None, y_full=None, title="Model", threshold=0.5):
     y_proba = model.predict_proba(X_test)[:, 1]
     y_pred = (y_proba >= threshold).astype(int)
@@ -90,7 +87,6 @@ def evaluate_model(model, X_test, y_test, X_full=None, y_full=None, title="Model
     plt.show()
 
 # Function to plot the learning curve of a trained model which shows training and cross-validation accuracy across varying training set sizes
-
 def plot_learning_curve(estimator, X, y, title="Learning Curve", cv=3, scoring="accuracy"):
     train_sizes, train_scores, test_scores = learning_curve(
         estimator, X, y, cv=cv, scoring=scoring, n_jobs=-1,
