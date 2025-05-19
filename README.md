@@ -69,40 +69,28 @@ pip install pandas numpy scikit-learn matplotlib seaborn imbalanced-learn xgboos
 
 ## Confusion Matrix and Metric Calculations
 
-<h3 align="center">Confusion Matrices for All Models</h3>
-
 <table align="center">
   <tr>
     <td align="center"><strong>Logistic Regression</strong><br>
-      <img src="https://github.com/user-attachments/assets/29059ff0-b173-4256-abff-d099b464dce1" width="300"/>
+      <img src="https://github.com/user-attachments/assets/29059ff0-b173-4256-abff-d099b464dce1" width="360"/>
     </td>
     <td align="center"><strong>Random Forest</strong><br>
-      <img src="https://github.com/user-attachments/assets/192a68d5-ec35-471a-8dd1-65094d48227a" width="300"/>
+      <img src="https://github.com/user-attachments/assets/192a68d5-ec35-471a-8dd1-65094d48227a" width="360"/>
     </td>
   </tr>
   <tr>
     <td align="center"><strong>XGBoost</strong><br>
-      <img src="https://github.com/user-attachments/assets/d6f49bd5-c816-4877-bcbc-5100d1e2d191" width="300"/>
+      <img src="https://github.com/user-attachments/assets/d6f49bd5-c816-4877-bcbc-5100d1e2d191" width="360"/>
     </td>
     <td align="center"><strong>LightGBM</strong><br>
-      <img src="https://github.com/user-attachments/assets/7182d4e9-7c9c-4e9a-9fff-a9e572f9d032" width="300"/>
+      <img src="https://github.com/user-attachments/assets/7182d4e9-7c9c-4e9a-9fff-a9e572f9d032" width="360"/>
     </td>
   </tr>
 </table>
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/29059ff0-b173-4256-abff-d099b464dce1" width="300" />
-  <img src="https://github.com/user-attachments/assets/192a68d5-ec35-471a-8dd1-65094d48227a" width="300" />
-</p>
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/d6f49bd5-c816-4877-bcbc-5100d1e2d191" width="300" />
-  <img src="https://github.com/user-attachments/assets/7182d4e9-7c9c-4e9a-9fff-a9e572f9d032" width="300" />
-</p>
-
-
 To better understand model performance, we used the confusion matrix to manually calculate model performance metrics including accuracy, precision, F1, and recall score. In order to determine how well a classification model is performing, we plot a confusion matrix which summarizes prediction results by comparing the actual labels with the predicted labels. The confusion matrix breaks down the predictions into four categories: true positive, true negative, false positive, false positive. 
 
-In this project, 'Fatal' collisions are encoded as 0 and 'Non-Fatal' as 1. Therefore:
+In this project, 'Fatal' collisions are encoded as 1 and 'Non-Fatal' as 0. Therefore:
 
 - True Positive (TP): the model correctly predicted positive cases (e.g., predicted outcome was non-fatal)
 - True Negative (TN): the model correctly predicted negative cases (e.g., predicted outcome was fatal)
@@ -111,11 +99,12 @@ In this project, 'Fatal' collisions are encoded as 0 and 'Non-Fatal' as 1. There
 
 ### Confusion Matrix Summary
 
-| Model                  | True Negatives (TN) | False Positives (FP)  | False Negatives (FN)  | True Positives (TP) |
+| Model                  | True Negatives (TN) | False Positives (FP) | False Negatives (FN) | True Positives (TP) |
 |------------------------|---------------------|-----------------------|-----------------------|---------------------|
-| **Logistic Regression**| 320                 | 137                   | 550                   | 2436                |
-| **Random Forest**      | 271                 | 186                   | 33                    | 2953                |
-| **XGBoost**            | 282                 | 175                   | 18                    | 2968                |
+| **Logistic Regression**| 2428                | 561                   | 137                   | 320                 |
+| **Random Forest**      | 2951                | 38                    | 150                   | 307                 |
+| **XGBoost**            | 2929                | 60                    | 88                    | 369                 |
+| **LightGBM**           | 2949                | 40                    | 103                   | 354                 |
 
 
 Using these counts, we calculate the model performance metrics using the following formulas:
@@ -126,25 +115,32 @@ Using these counts, we calculate the model performance metrics using the followi
 - **Recall score**    = TP / (FN + TP)
 
 ### Logistic Regression  
-- TP = 2436, TN = 320, FP = 137, FN = 550  
-- Accuracy  = (2436 + 320) / 3443 = **0.800**  
-- Precision = 2436 / (2436 + 137) = **0.946**
-- F1 Score  = 2 * (0.947 * 0.816) / (0.947 + 0.816) = **0.876**
-- Recall    = 2436 / (2436 + 550) = **0.815**  
+- TP = 320, TN = 2428, FP = 561, FN = 137  
+- Accuracy  = (320 + 2428) / 3446 = **0.797**  
+- Precision = 320 / (320 + 561) = **0.363**  
+- F1 Score  = 2 * (0.363 * 0.700) / (0.363 + 0.700) = **0.478**  
+- Recall    = 320 / (320 + 137) = **0.700**  
 
 ### Random Forest  
-- TP = 2953, TN = 271, FP = 186, FN = 33  
-- Accuracy  = (2953 + 271) / 3443 = **0.936**  
-- Precision = 2953 / (2953 + 186) = **0.940**
-- F1 Score  = 2 * (0.941 * 0.989) / (0.941 + 0.989) = **0.964**
-- Recall    = 2953 / (2953 + 33) = **0.989**  
+- TP = 307, TN = 2951, FP = 38, FN = 150  
+- Accuracy  = (307 + 2951) / 3446 = **0.945**  
+- Precision = 307 / (307 + 38) = **0.889**  
+- F1 Score  = 2 * (0.890 * 0.672) / (0.890 + 0.672) = **0.765**  
+- Recall    = 307 / (307 + 150) = **0.671**  
 
 ### XGBoost  
-- TP = 2968, TN = 282, FP = 175, FN = 18  
-- Accuracy  = (2968 + 282) / 3443 = **0.943**  
-- Precision = 2968 / (2968 + 175) = **0.944**
-- F1 Score  = 2 * (0.944 * 0.993) / (0.944 + 0.993) = **0.968**
-- Recall    = 2968 / (2968 + 18) = **0.993**  
+- TP = 369, TN = 2929, FP = 60, FN = 88  
+- Accuracy  = (369 + 2929) / 3446 = **0.957**  
+- Precision = 369 / (369 + 60) = **0.860**  
+- F1 Score  = 2 * (0.860 * 0.807) / (0.860 + 0.807) = **0.832**  
+- Recall    = 369 / (369 + 88) = **0.807**  
+
+### LightGBM  
+- TP = 354, TN = 2949, FP = 40, FN = 103  
+- Accuracy  = (354 + 2949) / 3446 = **0.958**  
+- Precision = 354 / (354 + 40) = **0.898**  
+- F1 Score  = 2 * (0.899 * 0.775) / (0.899 + 0.775) = **0.832**  
+- Recall    = 354 / (354 + 103) = **0.774**  
 
 ## Model Evaluation Results
 
@@ -154,6 +150,7 @@ Using these counts, we calculate the model performance metrics using the followi
 | **Random Forest**       | 94.54%   | 88.98%    | 76.55%   | 67.17%  | 0.943   |
 | **XGBoost**             | 95.70%   | 86.01%    | 83.29%   | 80.74%  | 0.955   |
 | **LightGBM**            | 95.85%   | 89.84%    | 83.19%   | 77.46%  | 0.952   |
+**Note:** The evaluation metrics in this table were computed using model-specific probability thresholds 
 
 ### Results Summary
 
