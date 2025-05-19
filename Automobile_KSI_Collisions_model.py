@@ -1,3 +1,8 @@
+# Pandas is a software library written in Python for data manipulation and analysis.
+import pandas as pd
+# NumPy is a library which provides support for large, multi-dimensional arrays, matrices and mathematical operations.
+import numpy as np
+
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
@@ -8,8 +13,6 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder,
 from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer, make_column_selector as selector
 from imblearn.over_sampling import SMOTE
-import numpy as np
-import pandas as pd
 
 from utils import evaluate_model, plot_learning_curve, plot_all_feature_importances, plot_feature_importances
 
@@ -131,7 +134,6 @@ def random_forest(X, y):
 
     plot_learning_curve(model, X_selected, y, title="Learning Curve for Random Forest")
 
-
 # XGBoost Model
 
 def xgboost(X, y):
@@ -177,7 +179,6 @@ def xgboost(X, y):
     evaluate_model(model, X_test, y_test, X_full=X_processed, y_full=y, title="XGBoost", threshold=0.2)
 
     plot_learning_curve(model, X_processed, y, title="Learning Curve for XGBoost")
-
 
 # LightGBM Model
 
