@@ -93,6 +93,7 @@ In this project, 'Fatal' collisions are encoded as 0 and 'Non-Fatal' as 1. There
 | **Random Forest**      | 271                 | 186                   | 33                    | 2953                |
 | **XGBoost**            | 282                 | 175                   | 18                    | 2968                |
 
+
 Using these counts, we calculate the model performance metrics using the following formulas:
 
 - **Accuracy score**  = (TP + TN) / (TP + FN + TN + FP)
@@ -123,12 +124,15 @@ Using these counts, we calculate the model performance metrics using the followi
 
 ## Model Evaluation Results
 
-| Model                   | Accuracy  | Precision | F1 Score | Recall   | ROC AUC |
-|-------------------------|-----------|-----------|----------|----------|---------|
-| **Logistic Regresion**  | 80.04%    | 94.67%    | 87.64%   | 81.58%   | 0.853   |
-| **Random Forest**       | 93.63%    | 94.07%    | 96.42%   | 98.89%   | 0.926   |
-| **XGBoost**             | 94.39%    | 94.43%    | 96.85%   | 99.39%   | 0.946   |
+| Model                   | Accuracy | Precision | F1 Score | Recall  | ROC AUC |
+|-------------------------|----------|-----------|----------|---------|---------|
+| **Logistic Regression** | 79.74%   | 36.32%    | 47.83%   | 70.02%  | 0.846   |
+| **Random Forest**       | 94.54%   | 88.98%    | 76.55%   | 67.17%  | 0.943   |
+| **XGBoost**             | 95.70%   | 86.01%    | 83.29%   | 80.74%  | 0.955   |
+| **LightGBM**            | 95.85%   | 89.84%    | 83.19%   | 77.46%  | 0.952   |
 
 ### Results Summary
 
 Random Forest and XGBoost both delivered strong performance, especially in identifying fatal collisions, with high accuracy, recall and F1 scores Logistic Regression performed well in terms of precision but lagged behind in terms of recall and overall accuracy, making it less reliable for detecting fatal outcomes. XGBoost outperformed the other models across all evaluation metrics, slightly outperforming Random Forest in all categories. Therefore we can conclude that XGBoost is the most effective model for distinguishing between fatal and non-fatal cases.
+
+LightGBM and XGBoost both delivered strong performance, especially in accurately identifying fatal collisions, with high scores across accuracy, precision, recall, and F1 metrics. Random Forest also performed well in most areas, however slightly underperformed in recall compared to all other models. Logistic Regression performed most poorly across almost every metric, making it less suitable for detecting fatal outcomes.Among all models, XGBoost consistently outperformed the others across most evaluation metrics, with recall being the most impactful metric. The model successfully identified over 80% of actual fatal collisions, making XGBoost the most effective choice for distinguishing between fatal and non-fatal cases in the context of automobile-related KSI collisions.
