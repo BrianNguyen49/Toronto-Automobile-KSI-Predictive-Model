@@ -33,6 +33,7 @@ The goal of the data preprocessing phase is to prepare and transform the raw dat
 Preprocessing steps performed:
 
 - Splitting the dataset into features `X` and target variable `y`
+- Dividing the dataset into 80% training and 20% testing sets, with 3-fold cross-validation applied only to the training set during model tuning
 - Encoding categorical variables using OneHotEncoding or OrdinalEncoding depending on the model used
 - Applied data imputation to fill missing values in categorical and numerical features
 - Scaled numerical features using MinMaxScaler as part of a numerical pipeline within a ColumnTransformer to proportionally scale values to a consistent range.
